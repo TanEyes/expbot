@@ -9,6 +9,9 @@ local mods = require("expb/mods.lua")
 client:on("messageCreate", function(message)
     
     if message.guild then if message.channel.nsfw then
+                for i, k in pairs(mods) do
+                    k.chat(message)
+                    end
         end end
     
     end)
