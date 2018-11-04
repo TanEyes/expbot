@@ -1,5 +1,3 @@
-local discordia = require('discordia')
-local client = discordia.Client()
 local module = {}
 
 function module.chat(message)
