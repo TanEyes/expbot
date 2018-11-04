@@ -7,7 +7,7 @@ mods = require "expb/modules"
 
 
 client:on("ready",function()
-      client:setGame("NSFW")          
+      client:setGame("NSFW 👀")          
   end)
 
 client:on("guildCreate", function(guild)
