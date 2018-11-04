@@ -1,5 +1,5 @@
 local ret = {}
 
-ret.main = require("modules/main.lua")
+ret.main = require("modules/main")
 
 return ret
