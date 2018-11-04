@@ -17,6 +17,18 @@ end
 	end
 end
 end
+function save(member)
+	if type(currency[member.id]) == "table" then
+aa = io.open("expb/userdata/".. member.id ..".lua", "w")
+io.output(aa)
+ee= ""
+for i, k in pairs(currency[member.id]) do
+ee = ee .."ret.".. i .." = ".. k .."\n"
+end
+io.write("ret = {} ".. ee .."\nreturn ret")
+io.close()
+end
+	end
 function curfind(member) 
   load = false
   for i, k in pairs(currency) do
@@ -25,8 +37,8 @@ function curfind(member)
   if not load then loads(member) end
   end
 function module.chat(message)
-  if message.content == "expb.test" then
-    end
+	curfind(message.member)
+	save(message.member)
   end
 
 return module
