@@ -1,8 +1,8 @@
 local discordia = require('discordia')
 local client = discordia.Client()
-token = require("expotoken")
+token = require "expotoken"
 
-local mods = require("expb/mods")
+local mods = require "expb/mods"
 
 
 
