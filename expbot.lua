@@ -6,6 +6,12 @@ mods = require "expb/modules"
 
 
 
+client:on("guildCreate", function(guild)
+        if guild.systemChannel then
+            guild.systemChannel:send("```css\nExponentia Has Joined!```")
+            end
+  end)
+
 client:on("messageCreate", function(message)
     
     if message.guild then if message.channel.nsfw then
