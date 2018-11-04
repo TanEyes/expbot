@@ -1,5 +1,5 @@
 local ret = {}
 
-ret.main = require "modules/main"
+ret.main = require "expb/modules/main"
 
 return ret
