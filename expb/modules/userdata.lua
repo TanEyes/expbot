@@ -35,6 +35,7 @@ function curfind(member)
     if i == member.id then load = true end
     end
   if not load then loads(member) end
+	return currency[member.id]
   end
 function module.chat(message)
 	curfind(message.member)
