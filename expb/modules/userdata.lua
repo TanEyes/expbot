@@ -82,7 +82,10 @@ function module.chat(message)
   end
 
 function module.getCurrency(member)
+	if curfind(member) then
 	return curfind(member)
+		else return {weight = {0}, eatCount = {1}, prestige = {0}}
+		end
 	end
 
 function module.nUpdate(member, table, id, value)
