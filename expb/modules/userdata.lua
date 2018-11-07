@@ -40,27 +40,33 @@ function curfind(member)
   end
 function module.chat(message)
 	curfind(message.member)
-	for i=1, #currency.weight[message.member.id] do
-		if currency.weight[message.member.id][i] >= 1000000000000000000000000000000 then
-			if currency.weight[message.member.id][i+1] then
-				currency.weight[message.member.id][i+1] = currency.weight[message.member.id][i+1] + 1
-				currency.weight[message.member.id][i] = currency.weight[message.member.id][i] - 1000000000000000000000000000000
+	for i=1, #currency[message.member.id].weight do
+		if currency[message.member.id].weight[i] >= 1000000000000000000000000000000 then
+			if currency[message.member.id].weight[i+1] then
+				currency[message.member.id].weight[i+1] = currency[message.member.id].weight[i+1] + 1
+				currency[message.member.id].weight[i] = currency[message.member.id].weight[i] - 1000000000000000000000000000000
+				else currency[message.member.id].weight[i+1] = 1
+				currency[message.member.id].weight[i] = currency[message.member.id].weight[i] - 1000000000000000000000000000000
 				end
 			end
 		end
-	for i=1, #currency.eatCount[message.member.id] do
-		if currency.eatCount[message.member.id][i] >= 1000000000000000000000000000000 then
-			if currency.eatCount[message.member.id][i+1] then
-				currency.eatCount[message.member.id][i+1] = currency.eatCount[message.member.id][i+1] + 1
-				currency.eatCount[message.member.id][i] = currency.eatCount[message.member.id][i] - 1000000000000000000000000000000
+	for i=1, #currency[message.member.id].eatCount do
+		if currency[message.member.id].eatCount[i] >= 1000000000000000000000000000000 then
+			if currency[message.member.id].eatCount[i+1] then
+				currency[message.member.id].eatCount[i+1] = currency[message.member.id].eatCount[i+1] + 1
+				currency[message.member.id].eatCount[i] = currency[message.member.id].eatCount[i] - 1000000000000000000000000000000
+				else currency[message.member.id].prestige[i+1] = 1
+				currency[message.member.id].eatCount[i] = currency[message.member.id].eatCount[i] - 1000000000000000000000000000000
 				end
 			end
 		end
-	for i=1, #currency.prestige[message.member.id] do
-		if currency.prestige[message.member.id][i] >= 1000000000000000000000000000000 then
-			if currency.prestige[message.member.id][i+1] then
-				currency.prestige[message.member.id][i+1] = currency.prestige[message.member.id][i+1] + 1
-				currency.prestige[message.member.id][i] = currency.prestige[message.member.id][i] - 1000000000000000000000000000000
+	for i=1, #currency[message.member.id].prestige do
+		if currency[message.member.id].prestige[i] >= 1000000000000000000000000000000 then
+			if currency[message.member.id].prestige[i+1] then
+				currency[message.member.id].prestige[i+1] = currency[message.member.id].prestige[i+1] + 1
+				currency[message.member.id].prestige[i] = currency[message.member.id].prestige[i] - 1000000000000000000000000000000
+				else currency[message.member.id].prestige[i+1] = 1
+				currency[message.member.id].prestige[i] = currency[message.member.id].prestige[i] - 1000000000000000000000000000000
 				end
 			end
 		end
