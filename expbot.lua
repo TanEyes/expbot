@@ -7,7 +7,10 @@ mods = require "expb/modules"
 
 
 client:on("ready",function()
-      client:setGame("NSFW 👀")          
+      client:setGame("NSFW 👀")  
+                            for i, k in pairs(mods) do
+                    k.init(mods)
+                    end
   end)
 
 client:on("guildCreate", function(guild)
