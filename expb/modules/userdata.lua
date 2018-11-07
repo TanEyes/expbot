@@ -44,42 +44,42 @@ function curfind(member)
 	return currency[member.id]
   end
 function module.chat(message)
-	curfind(message.member)
-	for i=1, #currency[message.member.id].weight do
-		if currency[message.member.id].weight[i] >= 1000000000000000000000000000000 then
-			if currency[message.member.id].weight[i+1] then
-				currency[message.member.id].weight[i+1] = currency[message.member.id].weight[i+1] + 1
-				currency[message.member.id].weight[i] = currency[message.member.id].weight[i] - 1000000000000000000000000000000
-				else currency[message.member.id].weight[i+1] = 1
-				currency[message.member.id].weight[i] = currency[message.member.id].weight[i] - 1000000000000000000000000000000
+	curfind(message.author)
+	for i=1, #currency[message.author.id].weight do
+		if currency[message.author.id].weight[i] >= 1000000000000000000000000000000 then
+			if currency[message.author.id].weight[i+1] then
+				currency[message.author.id].weight[i+1] = currency[message.author.id].weight[i+1] + 1
+				currency[message.author.id].weight[i] = currency[message.author.id].weight[i] - 1000000000000000000000000000000
+				else currency[message.author.id].weight[i+1] = 1
+				currency[message.author.id].weight[i] = currency[message.author.id].weight[i] - 1000000000000000000000000000000
 				end
 			end
 		end
-	for i=1, #currency[message.member.id].eatCount do
-		if currency[message.member.id].eatCount[i] >= 1000000000000000000000000000000 then
-			if currency[message.member.id].eatCount[i+1] then
-				currency[message.member.id].eatCount[i+1] = currency[message.member.id].eatCount[i+1] + 1
-				currency[message.member.id].eatCount[i] = currency[message.member.id].eatCount[i] - 1000000000000000000000000000000
-				else currency[message.member.id].prestige[i+1] = 1
-				currency[message.member.id].eatCount[i] = currency[message.member.id].eatCount[i] - 1000000000000000000000000000000
+	for i=1, #currency[message.author.id].eatCount do
+		if currency[message.author.id].eatCount[i] >= 1000000000000000000000000000000 then
+			if currency[message.author.id].eatCount[i+1] then
+				currency[message.author.id].eatCount[i+1] = currency[message.author.id].eatCount[i+1] + 1
+				currency[message.author.id].eatCount[i] = currency[message.author.id].eatCount[i] - 1000000000000000000000000000000
+				else currency[message.author.id].prestige[i+1] = 1
+				currency[message.author.id].eatCount[i] = currency[message.author.id].eatCount[i] - 1000000000000000000000000000000
 				end
 			end
 		end
-	for i=1, #currency[message.member.id].prestige do
-		if currency[message.member.id].prestige[i] >= 1000000000000000000000000000000 then
-			if currency[message.member.id].prestige[i+1] then
-				currency[message.member.id].prestige[i+1] = currency[message.member.id].prestige[i+1] + 1
-				currency[message.member.id].prestige[i] = currency[message.member.id].prestige[i] - 1000000000000000000000000000000
-				else currency[message.member.id].prestige[i+1] = 1
-				currency[message.member.id].prestige[i] = currency[message.member.id].prestige[i] - 1000000000000000000000000000000
+	for i=1, #currency[message.author.id].prestige do
+		if currency[message.author.id].prestige[i] >= 1000000000000000000000000000000 then
+			if currency[message.author.id].prestige[i+1] then
+				currency[message.author.id].prestige[i+1] = currency[message.author.id].prestige[i+1] + 1
+				currency[message.author.id].prestige[i] = currency[message.author.id].prestige[i] - 1000000000000000000000000000000
+				else currency[message.author.id].prestige[i+1] = 1
+				currency[message.author.id].prestige[i] = currency[message.author.id].prestige[i] - 1000000000000000000000000000000
 				end
 			end
 		end
-	save(message.member)
+	save(message.author)
   end
 
 function module.getCurrency(member)
-	return curfind(member)
+	return currency[member.id]
 	end
 
 function module.nUpdate(member, table, id, value)
