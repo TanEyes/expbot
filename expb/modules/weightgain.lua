@@ -1,8 +1,11 @@
 local module = {}
-
+local vars = {}
+function module.init(mods)
+    vars.mods = mods
+    end
 function module.chat(m)
-    local cur = mods.userdata.getCurrency(m)
-    mods.userdata.nUpdate(m, "weight", 1, cur.weight[1] + 10)
+    local cur = vars.mods.userdata.getCurrency(m)
+    vars.mods.userdata.nUpdate(m, "weight", 1, cur.weight[1] + 10)
     print("up 10")
 end
 
