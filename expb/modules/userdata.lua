@@ -84,6 +84,7 @@ function module.getCurrency(member)
 
 function module.nUpdate(member, table, id, value)
 	currency[member.id][table][id] = value
+	save(member)
 	end
 
 return module
