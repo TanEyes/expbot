@@ -78,4 +78,8 @@ function module.chat(message)
 	save(message.member)
   end
 
+function module.getCurrency(member)
+	return currency[member.id]
+	end
+
 return module
