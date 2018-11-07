@@ -13,6 +13,7 @@ end
 		aa:close()
 	else
 		currency[mem.id] = {
+				weight = {0}, eatCount = {1}, prestige = {0}
 		}
 	end
 end
@@ -39,6 +40,30 @@ function curfind(member)
   end
 function module.chat(message)
 	curfind(message.member)
+	for i=1, #currency.weight[message.member.id] do
+		if currency.weight[message.member.id][i] >= 1000000000000000000000000000000 then
+			if currency.weight[message.member.id][i+1] then
+				currency.weight[message.member.id][i+1] = currency.weight[message.member.id][i+1] + 1
+				currency.weight[message.member.id][i] = currency.weight[message.member.id][i] - 1000000000000000000000000000000
+				end
+			end
+		end
+	for i=1, #currency.eatCount[message.member.id] do
+		if currency.eatCount[message.member.id][i] >= 1000000000000000000000000000000 then
+			if currency.eatCount[message.member.id][i+1] then
+				currency.eatCount[message.member.id][i+1] = currency.eatCount[message.member.id][i+1] + 1
+				currency.eatCount[message.member.id][i] = currency.eatCount[message.member.id][i] - 1000000000000000000000000000000
+				end
+			end
+		end
+	for i=1, #currency.prestige[message.member.id] do
+		if currency.prestige[message.member.id][i] >= 1000000000000000000000000000000 then
+			if currency.prestige[message.member.id][i+1] then
+				currency.prestige[message.member.id][i+1] = currency.prestige[message.member.id][i+1] + 1
+				currency.prestige[message.member.id][i] = currency.prestige[message.member.id][i] - 1000000000000000000000000000000
+				end
+			end
+		end
 	save(message.member)
   end
 
