@@ -46,6 +46,7 @@ function curfind(member)
 function module.chat(message)
 	curfind(message.author)
 	for i=1, #currency[message.author.id].weight do
+		print(currency[message.author.id].weight[i])
 		while currency[message.author.id].weight[i] >= 100000000000000000000000000000000000000000000000000000000000 do if currency[message.author.id].weight[i] >= 100000000000000000000000000000000000000000000000000000000000 then
 			if currency[message.author.id].weight[i+1] then
 				currency[message.author.id].weight[i+1] = currency[message.author.id].weight[i+1] + 1
