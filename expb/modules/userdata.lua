@@ -24,7 +24,12 @@ aa = io.open("expb/userdata/".. member.id ..".lua", "w")
 io.output(aa)
 ee= ""
 for i, k in pairs(currency[member.id]) do
-ee = ee .."ret.".. i .." = ".. k .."\n"
+	if type(k) == "table" then str = ""
+				for c, v in pairs(k) do if c < #k then str = str .. k .."," else str = str .. k end
+		ee = ee .."ret.".. i .." = {".. str .."}\n"
+		else
+		ee = ee .."ret.".. i .." = ".. k .."\n"
+		end
 end
 io.write("ret = {} ".. ee .."\nreturn ret")
 io.close()
