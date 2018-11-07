@@ -79,7 +79,7 @@ function module.chat(message)
   end
 
 function module.getCurrency(member)
-	return currency[member.id]
+	return curfind(member)
 	end
 
 function module.nUpdate(member, table, id, value)
