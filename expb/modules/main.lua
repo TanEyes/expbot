@@ -1,8 +1,14 @@
 local module = {}
 
 function module.chat(message)
-  if message.content == "expb.test" then
-    message.channel:send("Bot Functional")
+  if message.content == "expb.update" and message.author.id == "115529446370443265" then
+os.execute("git pull https://github.com/TanEyes/expbot --allow-unrelated-histories")
+print("Updated.")
+io.close()
+
+    message.channel:send("Updated. Restarting...")
+    os.execute("luvit expbot")
+    os.execute("exit")
     end
   end
 
