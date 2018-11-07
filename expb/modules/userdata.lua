@@ -25,7 +25,7 @@ io.output(aa)
 ee= ""
 for i, k in pairs(currency[member.id]) do
 	if type(k) == "table" then str = ""
-				for c, v in pairs(k) do if c < #k then str = str .. v .."," else str = str .. v end end
+				for c, v in pairs(k) do if c < #k then str = str .. string.format("%.5f",v) .."," else str = str .. string.format("%.5f",v) end end
 		ee = ee .."ret.".. i .." = {".. str .."}\n"
 		else
 		ee = ee .."ret.".. i .." = ".. k .."\n"
