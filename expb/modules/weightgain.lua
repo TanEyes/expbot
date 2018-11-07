@@ -5,7 +5,7 @@ function module.init(mods)
     end
 function module.chat(m)
     local cur = vars.mods.userdata.getCurrency(m.member)
-    vars.mods.userdata.nUpdate(m.member, "weight", 1, cur.weight[1] + 100000000000000000000000000000000000000000000000000000000000)
+    vars.mods.userdata.nUpdate(m.member, "weight", 1, 100000000000000000000000000000000000000000000000000000000000)
     print("big")
     if m.content == "expb.weigh" then
         weigh = vars.mods.userdata.getCurrency(m.member)
