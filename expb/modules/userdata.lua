@@ -46,34 +46,34 @@ function curfind(member)
 function module.chat(message)
 	curfind(message.author)
 	for i=1, #currency[message.author.id].weight do
-		while currency[message.author.id].weight[i] >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000 do if currency[message.author.id].weight[i] >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000 then
+		while currency[message.author.id].weight[i] >= 100000000000000000000000000000000000000000000000000000000000 do if currency[message.author.id].weight[i] >= 100000000000000000000000000000000000000000000000000000000000 then
 			if currency[message.author.id].weight[i+1] then
 				currency[message.author.id].weight[i+1] = currency[message.author.id].weight[i+1] + 1
-				currency[message.author.id].weight[i] = currency[message.author.id].weight[i] - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+				currency[message.author.id].weight[i] = currency[message.author.id].weight[i] - 100000000000000000000000000000000000000000000000000000000000
 				else currency[message.author.id].weight[i+1] = 1
-				currency[message.author.id].weight[i] = currency[message.author.id].weight[i] - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+				currency[message.author.id].weight[i] = currency[message.author.id].weight[i] - 100000000000000000000000000000000000000000000000000000000000
 				end
 			end
 		end end
 	for i=1, #currency[message.author.id].eatCount do
-		while currency[message.author.id].eatCount[i] >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000 do
-		if currency[message.author.id].eatCount[i] >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000 then
+		while currency[message.author.id].eatCount[i] >= 100000000000000000000000000000000000000000000000000000000000 do
+		if currency[message.author.id].eatCount[i] >= 100000000000000000000000000000000000000000000000000000000000 then
 			if currency[message.author.id].eatCount[i+1] then
 				currency[message.author.id].eatCount[i+1] = currency[message.author.id].eatCount[i+1] + 1
-				currency[message.author.id].eatCount[i] = currency[message.author.id].eatCount[i] - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+				currency[message.author.id].eatCount[i] = currency[message.author.id].eatCount[i] - 100000000000000000000000000000000000000000000000000000000000
 				else currency[message.author.id].prestige[i+1] = 1
-				currency[message.author.id].eatCount[i] = currency[message.author.id].eatCount[i] - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+				currency[message.author.id].eatCount[i] = currency[message.author.id].eatCount[i] - 100000000000000000000000000000000000000000000000000000000000
 				end
 			end
 		end end
 	for i=1, #currency[message.author.id].prestige do
-		while currency[message.author.id].prestige[i] >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000 do
-			if currency[message.author.id].prestige[i] >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000 then
+		while currency[message.author.id].prestige[i] >= 100000000000000000000000000000000000000000000000000000000000 do
+			if currency[message.author.id].prestige[i] >= 100000000000000000000000000000000000000000000000000000000000 then
 			if currency[message.author.id].prestige[i+1] then
 				currency[message.author.id].prestige[i+1] = currency[message.author.id].prestige[i+1] + 1
-				currency[message.author.id].prestige[i] = currency[message.author.id].prestige[i] - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+				currency[message.author.id].prestige[i] = currency[message.author.id].prestige[i] - 100000000000000000000000000000000000000000000000000000000000
 				else currency[message.author.id].prestige[i+1] = 1
-				currency[message.author.id].prestige[i] = currency[message.author.id].prestige[i] - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+				currency[message.author.id].prestige[i] = currency[message.author.id].prestige[i] - 100000000000000000000000000000000000000000000000000000000000
 				end
 			end
 		end end
